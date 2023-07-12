@@ -1,11 +1,11 @@
-from Barath import barath
+from Hoshino import pbot as app
 import httpx
 from pyrogram import filters, Client
 from pyrogram.types import Message
-from config import HANDLER, OWNER_ID
 
-@barath.on_message(filters.command("chat",prefixes=HANDLER) & filters.user(OWNER_ID))
-async def gpt(_, message):
+
+@app.on_message(filters.command("chat"))
+async def gpt(_: Client, message: Message):
     txt = await message.reply("**writing....**")
     if len(message.command) < 2:
         return await txt.edit("**give me a message too.**")
@@ -32,3 +32,11 @@ async def gpt(_, message):
             await txt.edit(f"An error occurred: {str(e)}")
 
 
+
+__help__ = """
+ᴀɴ ᴇꜰꜰᴇᴄᴛɪᴠᴇ ᴄʜᴀᴛ ɢᴘᴛ ᴍᴏᴅᴜʟᴇ ᴡɪᴛʜ ʀᴇᴀʟ ɢᴘᴛ ᴀᴘɪ.ᴜɴʟɪᴍɪᴛᴇᴅ ʀᴇQᴜᴇꜱᴛꜱ.  
+
+ ➢ /chat*:* ɢᴇɴᴇʀᴀᴛᴇꜱ ʀᴇꜱᴘᴏɴꜱᴇ ᴛʜʀᴏᴜɢʜ ᴄʜᴀᴛ ɢᴘᴛ ᴀᴘɪ.
+"""
+
+__mod_name__ = "Gᴘᴛ"
