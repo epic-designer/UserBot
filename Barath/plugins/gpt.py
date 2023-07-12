@@ -5,7 +5,7 @@ from pyrogram.types import Message
 from config import HANDLER, OWNER_ID
 
 @barath.on_message(filters.command("chat",prefixes=HANDLER) & filters.user(OWNER_ID))
-async def gpt(_: Client, message: Message):
+async def gpt(_, message):
     txt = await message.reply("**writing....**")
     if len(message.command) < 2:
         return await txt.edit("**give me a message too.**")
