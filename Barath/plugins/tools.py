@@ -26,8 +26,6 @@ opener.addheaders = [("User-agent", useragent)]
 
 @barath.on_message(filters.command("google",prefixes=HANDLER) & filters.user(OWNER_ID))
 async def _(event):
-    if event.fwd_from:
-        return
 
     webevent = await event.reply("searching........")
     match = event.pattern_match.group(1)

@@ -14,6 +14,7 @@ async def gpt(_: Client, message: Message):
     url = "https://api.safone.me/chatgpt"
     payload = {
         "message": query,
+        
         "chat_mode": "assistant",
         "dialog_messages": '[{"bot":"","user":""}]',
     }
