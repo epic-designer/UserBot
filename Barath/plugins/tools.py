@@ -19,7 +19,7 @@ from Barath import  barath
 from config import HANDLER, OWNER_ID
 
 
-@barath.on_message(filters.command("video",prefixes=HANDLER) & filters.user(OWNER_ID))
+@barath.on_message(filters.command("google",prefixes=HANDLER) & filters.user(OWNER_ID))
 async def _(event):
     if event.fwd_from:
         return
